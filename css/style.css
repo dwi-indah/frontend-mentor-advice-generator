@@ -1,0 +1,221 @@
+*, :after, :before {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  font-size: 16px;
+  color: #cee3e9;
+  background-color: #1f2632;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  position: relative;
+  line-height: 24px;
+  padding: 12px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  vertical-align: baseline;
+  outline: 0;
+}
+
+a:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus,
+button:focus {
+  outline: 0;
+  outline: -webkit-focus-ring-color auto 0;
+  outline-offset: 0;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+  height: auto;
+  vertical-align: top;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  color: #000000;
+}
+
+p {
+  margin: 0;
+}
+
+main {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-height: 95vh;
+}
+
+.card {
+  border-radius: 12px;
+  background: #323a49;
+  position: relative;
+  padding: 32px 20px 50px;
+  text-align: center;
+  width: 100%;
+  min-height: 200px;
+  max-width: 500px;
+}
+
+.card-loader {
+  display: none;
+}
+
+.card-loader.-active {
+  display: block;
+}
+
+.card-detail {
+  display: none;
+}
+
+.card-detail.-active {
+  display: block;
+}
+
+@media (min-width: 900px) {
+  .card {
+    padding: 40px 40px 60px;
+  }
+}
+
+.card h1 {
+  color: #52ffa8;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card p {
+  color: #cee3e9;
+  font-size: 28px;
+  line-height: 36px;
+  margin: 24px 0;
+}
+
+@media (min-width: 900px) {
+  .card p {
+    margin: 32px 0;
+  }
+}
+
+.card-button {
+  outline: none;
+  border: 0;
+  border-radius: 50%;
+  background: #52ffa8;
+  display: block;
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  -webkit-transition: .2s ease;
+  transition: .2s ease;
+}
+
+.card-button:hover {
+  box-shadow: 0 0 20px rgba(82, 255, 168, 0.8);
+  -moz-box-shadow: 0 0 20px rgba(82, 255, 168, 0.8);
+  -webkit-box-shadow: 0 0 20px rgba(82, 255, 168, 0.8);
+  -o-box-shadow: 0 0 20px rgba(82, 255, 168, 0.8);
+}
+
+footer {
+  padding: 24px;
+  text-align: center;
+}
+
+.clock-loader {
+  --clock-color: $cl_secondary;
+  --clock-width: 4rem;
+  --clock-radius: calc(var(--clock-width) / 2);
+  --clock-minute-length: calc(var(--clock-width) * 0.4);
+  --clock-hour-length: calc(var(--clock-width) * 0.2);
+  --clock-thickness: 0.2rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: var(--clock-width);
+  height: var(--clock-width);
+  border: 3px solid #52ffa8;
+  border-radius: 50%;
+  margin: 10% auto 0;
+}
+
+.clock-loader::before, .clock-loader::after {
+  position: absolute;
+  content: "";
+  top: calc(var(--clock-radius) * 0.25);
+  width: var(--clock-thickness);
+  background: #52ffa8;
+  border-radius: 10px;
+  -webkit-transform-origin: center calc(100% - calc(var(--clock-thickness) / 2));
+          transform-origin: center calc(100% - calc(var(--clock-thickness) / 2));
+  -webkit-animation: spin infinite linear;
+          animation: spin infinite linear;
+}
+
+.clock-loader::before {
+  height: var(--clock-minute-length);
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.clock-loader::after {
+  top: calc(var(--clock-radius) * 0.25 + var(--clock-hour-length));
+  height: var(--clock-hour-length);
+  -webkit-animation-duration: 15s;
+          animation-duration: 15s;
+}
+
+@-webkit-keyframes spin {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes spin {
+  to {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+/*# sourceMappingURL=style.css.map */
